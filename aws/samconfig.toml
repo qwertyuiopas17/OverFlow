@@ -1,4 +1,4 @@
-﻿# Upstream SAM deploy configuration.
+# Upstream SAM deploy configuration.
 # Run from the aws/ directory:  sam build && sam deploy
 #
 # First deploy:  sam deploy --guided   (fills in the parameter overrides below)
@@ -12,10 +12,9 @@ parallel = true
 
 [default.deploy.parameters]
 stack_name = "upstream"
-region = "us-east-1"
-confirm_changeset = false
+confirm_changeset = true
 capabilities = "CAPABILITY_IAM CAPABILITY_AUTO_EXPAND"
-image_repositories = []
+image_repositories = ["ApiFunction=924263790945.dkr.ecr.us-east-1.amazonaws.com/upstreambc3b0556/apifunction51503098repo", "ReaderFunction=924263790945.dkr.ecr.us-east-1.amazonaws.com/upstreambc3b0556/readerfunction14e76411repo", "LocateFunction=924263790945.dkr.ecr.us-east-1.amazonaws.com/upstreambc3b0556/locatefunctionc6bc7522repo", "AgentFunction=924263790945.dkr.ecr.us-east-1.amazonaws.com/upstreambc3b0556/agentfunction0c5cd6ferepo", "StatusFunction=924263790945.dkr.ecr.us-east-1.amazonaws.com/upstreambc3b0556/statusfunctionb8d37883repo"]
 
 # Uncomment and fill in after first `sam deploy --guided`:
 # parameter_overrides = [
@@ -24,3 +23,9 @@ image_repositories = []
 #   "CorsOrigin=*",
 #   "AgentMode=auto"
 # ]
+resolve_s3 = true
+s3_prefix = "upstream"
+parameter_overrides = "AlertEmail=\"gtripathigtx@outlook.com\" BedrockModelId=\"anthropic.claude-3-5-sonnet-20241022-v2:0\" AgentMode=\"rules\" CorsOrigin=\"*\""
+
+[default.global.parameters]
+region = "us-east-1"

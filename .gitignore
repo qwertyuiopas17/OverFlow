@@ -1,4 +1,4 @@
-﻿# Python
+# Python
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -47,3 +47,8 @@ htmlcov/
 
 # Agents config (local)
 .agents/
+
+# AWS SAM build artifacts
+.aws-sam/
+aws/.aws-sam/
+samconfig.toml

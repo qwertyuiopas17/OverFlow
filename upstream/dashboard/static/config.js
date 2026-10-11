@@ -1,3 +1,2 @@
-/* Overwritten by `upstream export-site --api-base ...` to point a static/Amplify
-   deployment at the AWS API. Empty when served by the local FastAPI app. */
-window.UPSTREAM_CONFIG = window.UPSTREAM_CONFIG || {};
+/* Upstream dashboard API configuration */
+const UPSTREAM_API_BASE = "https://kb4iws3j00.execute-api.us-east-1.amazonaws.com";

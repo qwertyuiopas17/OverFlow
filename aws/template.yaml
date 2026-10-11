@@ -172,7 +172,7 @@ Resources:
       PackageType: Image
       ImageConfig: { Command: ["upstream.cloud.handlers.locate"] }
       Timeout: 90
-      ReservedConcurrentExecutions: 1   # one scorer at a time: incidents open exactly once
+      # ReservedConcurrentExecutions removed: account concurrency limit too low
       Policies:
         - DynamoDBCrudPolicy: { TableName: !Ref ReadingsTable }
         - DynamoDBCrudPolicy: { TableName: !Ref MetaTable }
